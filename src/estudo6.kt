@@ -19,7 +19,7 @@ class Produto(
     private var preco: Double,
     private var estoque: Int
 ) {
-    // Método para definir o preço de venda do produto
+
     fun definirPreco(novoPreco: Double) {
         if (novoPreco >= 0) {
             preco = novoPreco
@@ -28,7 +28,7 @@ class Produto(
         }
     }
 
-    // Método para conceder reajuste de preço de acordo com um percentual
+
     fun reajustarPreco(percentual: Double) {
         if (percentual >= 0) {
             preco += preco * (percentual / 100)
@@ -37,7 +37,7 @@ class Produto(
         }
     }
 
-    // Método para decrementar o estoque ao efetuar uma venda
+
     fun vender(quantidade: Int) {
         if (quantidade > 0 && quantidade <= estoque) {
             estoque -= quantidade
@@ -46,7 +46,7 @@ class Produto(
         }
     }
 
-    // Método para incrementar o estoque ao efetuar uma compra
+
     fun comprar(quantidade: Int) {
         if (quantidade > 0) {
             estoque += quantidade
@@ -55,7 +55,7 @@ class Produto(
         }
     }
 
-    // Método para exibir informações do produto
+
     fun exibirInformacoes() {
         println("Código: $codigo")
         println("Descrição: $descricao")
@@ -65,40 +65,40 @@ class Produto(
 }
 
 fun main() {
-    // Criação de alguns produtos
+
     val produto1 = Produto("001", "Mouse Gamer", 150.0, 50)
     val produto2 = Produto("002", "Teclado Mecânico", 250.0, 30)
     val produto3 = Produto("003", "Monitor 24 polegadas", 1200.0, 20)
 
-    // Exibe informações dos produtos
+
     produto1.exibirInformacoes()
     produto2.exibirInformacoes()
     produto3.exibirInformacoes()
 
     println("\nReajustando preços dos produtos...")
 
-    // Reajusta o preço dos produtos
-    produto1.reajustarPreco(10.0) // Aumenta o preço em 10%
-    produto2.reajustarPreco(5.0)  // Aumenta o preço em 5%
-    produto3.reajustarPreco(15.0) // Aumenta o preço em 15%
 
-    // Exibe informações atualizadas dos produtos
+    produto1.reajustarPreco(10.0)
+    produto2.reajustarPreco(5.0)
+    produto3.reajustarPreco(15.0)
+
+
     produto1.exibirInformacoes()
     produto2.exibirInformacoes()
     produto3.exibirInformacoes()
 
     println("\nEfetuando vendas e compras de produtos...")
 
-    // Efetua vendas de produtos
-    produto1.vender(10) // Vende 10 unidades de Mouse Gamer
-    produto2.vender(5)  // Vende 5 unidades de Teclado Mecânico
-    produto3.vender(2)  // Vende 2 unidades de Monitor
 
-    // Efetua compras de produtos
-    produto1.comprar(20) // Compra 20 unidades de Mouse Gamer
-    produto2.comprar(10) // Compra 10 unidades de Teclado Mecânico
+    produto1.vender(10)
+    produto2.vender(5)
+    produto3.vender(2)
 
-    // Exibe informações atualizadas dos produtos após vendas e compras
+
+    produto1.comprar(20)
+    produto2.comprar(10)
+
+
     produto1.exibirInformacoes()
     produto2.exibirInformacoes()
     produto3.exibirInformacoes()

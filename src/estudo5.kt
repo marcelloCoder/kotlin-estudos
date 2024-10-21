@@ -16,7 +16,7 @@ class Carro(
     var placa: String? = null,
     var proprietario: String? = null
 ) {
-    // Construtor que inicializa apenas marca, modelo, ano de fabricação e ano do modelo
+
     constructor(marca: String, modelo: String, anoFabricacao: Int, anoModelo: Int) : this(
         marca,
         modelo,
@@ -26,23 +26,23 @@ class Carro(
         null
     )
 
-    // Método para calcular a idade do veículo
+
     fun idadeVeiculo(): Int {
         val anoAtual = Year.now().value
         return anoAtual - anoModelo
     }
 
-    // Método para alterar a placa
+
     fun alterarPlaca(novaPlaca: String) {
         placa = novaPlaca
     }
 
-    // Método para alterar o proprietário
+
     fun alterarProprietario(novoProprietario: String) {
         proprietario = novoProprietario
     }
 
-    // Método para exibir informações do carro
+
     fun exibirInformacoes() {
         println("Marca: $marca")
         println("Modelo: $modelo")
@@ -55,7 +55,7 @@ class Carro(
 }
 
 fun main() {
-    // Criação do primeiro carro
+
     val carro1 = Carro("Toyota", "Corolla", 2010, 2010)
     carro1.alterarPlaca("ABC-1234")
     carro1.alterarProprietario("João Silva")
@@ -63,7 +63,7 @@ fun main() {
 
     println()
 
-    // Criação do segundo carro
+
     val carro2 = Carro("Ford", "Fiesta", 2015, 2016, "XYZ-5678", "Maria Oliveira")
     carro2.exibirInformacoes()
 }
